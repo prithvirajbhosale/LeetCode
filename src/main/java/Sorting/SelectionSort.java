@@ -6,6 +6,7 @@ import java.util.Scanner;
 /*
 selection sort works on the priciple of finding the minimum and placing it in the right position
  */
+
 public class SelectionSort {
 
     public static void main(String []args){
