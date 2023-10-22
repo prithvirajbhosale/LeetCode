@@ -77,7 +77,7 @@ public class MergeSort {
 
         // if the lengths are not equal there can be some elements remaining then copy all those elements
 
-        //if in arr1 elements are remaining
+        //if in arr1 elements are remaini ng
         while(idx1 < length1){
             arr[originalArrayIndex++] = first[idx1++];
         }
