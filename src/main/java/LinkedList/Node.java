@@ -74,6 +74,25 @@ public class Node {
         }
     }
 
+    static Node reverseLinkedList(Node head){
+        Node current = head;
+        Node previous = null;
+        //Make previous point to null and current to head
+        while (current!= null){
+            Node temp = current.next;
+            //we will point previous to current
+            // 100->122->10->20
+            //below statemnet will make next pointer point to null (in 1st iteration)
+          current.next = previous;
+          //now we will shift the previous pointer to current, but we loosed the next adress hence stored it in temp
+          previous = current;
+          //making the temp as current to retain the address
+          current= temp;
+        }
+        return previous;
+
+    }
+
     public static void main(String[] args) {
         Node node1 = new Node(10);
         Node head = node1;
@@ -91,6 +110,8 @@ public class Node {
 
         printLinedList(head);
 
+        head = reverseLinkedList(head);
 
+        printLinedList(head);
     }
 }

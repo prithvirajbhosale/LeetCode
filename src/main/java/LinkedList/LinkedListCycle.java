@@ -36,6 +36,22 @@ public class LinkedListCycle {
      return false;
    }
 
+    private static boolean detectCycleUsingPointers(Node node){
+        //2 pointers fast and slow
+        Node slow = node;
+        Node fast = node;
+
+        while (fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     static public void push(int new_data)
     {
         /* 1 & 2: Allocate the Node &
@@ -61,6 +77,12 @@ public class LinkedListCycle {
         head.next.next.next.next = llist.head;
 
         if (detectCycle(head))
+            System.out.println("Loop Found");
+        else
+            System.out.println("No Loop");
+
+
+        if (detectCycleUsingPointers(head))
             System.out.println("Loop Found");
         else
             System.out.println("No Loop");
