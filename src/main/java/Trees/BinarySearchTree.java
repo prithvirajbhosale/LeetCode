@@ -67,7 +67,7 @@ public class BinarySearchTree {
         node root1 = null;
         root = buildTree(root);
        // System.out.println("buid tree 2 started ");
-        //root1 = buildTree(root);
+        root1 = buildTree(root);
 
        // isSameTree(root,root1);
 
