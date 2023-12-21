@@ -15,7 +15,15 @@ public class Heap {
     }
 
     private void insert (int val){
-
+        /*
+            insert karne ke liye size ko phele bada do
+            then insert the value in the size index
+            abhi usko sahi jagah leke jao
+                calculate parent
+                check if parent is < the new array element
+                    if yes iska matalb parent galat jagah hai toh swap karo
+                    if no toh sahi jagah hai return karo
+         */
         size = size +1;
         int index = size;
         arr[index] = val;
@@ -94,6 +102,33 @@ public class Heap {
         }
     }
 
+    /*
+
+     */
+    private static void heapify(int arr[],int n, int i){
+        int largest = i;
+        int left = 2*i;
+        int right = 2*i+1;
+
+        //if largest is small then the left then change the largest
+        if(left<n && arr[largest]<arr[left]){
+            largest = left;
+
+        }
+        if(right<n && arr[largest]<arr[right]){
+            largest = right;
+
+        }
+
+        //check if largest is updated, that means it is not equal to i
+        //If it is updated that means node ko sahi jagah par paucha diya
+        if(largest!=i){
+        swapArrayValues(arr, arr[largest],arr[i]);
+        //Now you should do this same for entire tree so call hepify
+            heapify(arr,n,largest);
+        }
+    }
+
     public static void main(String[] args) {
         Heap h = new Heap();
         h.insert(50);
@@ -104,7 +139,14 @@ public class Heap {
         h.print();
         System.out.println();
 
-        h.deleteFromHeap();
+       // h.deleteFromHeap();
+       // h.print();
+
+        int[] arr = new int[]{-1,54,53,52,50};
+        int n = 5;
+        for (int i = n/2; i>0;i--){
+            heapify(arr,n,i);
+        }
         h.print();
     }
 }
