@@ -111,11 +111,11 @@ public class Heap {
         int right = 2*i+1;
 
         //if largest is small then the left then change the largest
-        if(left<n && arr[largest]<arr[left]){
+        if(left<=n && arr[largest]<arr[left]){
             largest = left;
 
         }
-        if(right<n && arr[largest]<arr[right]){
+        if(right<=n && arr[largest]<arr[right]){
             largest = right;
 
         }
@@ -127,6 +127,26 @@ public class Heap {
         //Now you should do this same for entire tree so call hepify
             heapify(arr,n,largest);
         }
+    }
+
+    private static void heapSort(int [] arr,int n){
+        /*
+        swap the first element and last element, bcoz the root will be largest
+        now reduce the size by 1, bcoz last element is already sorted
+        now arrange the first element in correct place(heapify)
+
+         */
+        int size = n;
+
+        while(size >1){
+            //step 1
+            swapArrayValues(arr,arr[size],arr[1]);
+            //step 2
+            size--;
+            //step 3
+            heapify(arr,size,1);
+        }
+
     }
 
     public static void main(String[] args) {
@@ -143,10 +163,17 @@ public class Heap {
        // h.print();
 
         int[] arr = new int[]{-1,54,53,52,50};
-        int n = 5;
+        int n = 4;
         for (int i = n/2; i>0;i--){
             heapify(arr,n,i);
         }
-        h.print();
+     //   h.print();
+
+        //Heap sort
+        heapSort(arr,n);
+        System.out.println("Heap sort " );
+        for(int i=1; i<=n;i++){
+            System.out.println(arr[i]+ " ");
+        }
     }
 }
