@@ -1,8 +1,6 @@
 package Heaps;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Heap {
 
@@ -175,5 +173,35 @@ public class Heap {
         for(int i=1; i<=n;i++){
             System.out.println(arr[i]+ " ");
         }
+
+        /*
+        In java the priority queue is implemented by using the Min heap
+         */
+        PriorityQueue<Integer> p = new PriorityQueue<Integer>();
+        p.add(4);
+        p.add(2);
+        p.add(5);
+        p.add(3);
+
+        System.out.println("Top element of the heap is " + p.peek());
+        //p.poll() this will remove the element from the priority queue
+
+        /*
+        if you want to change the position of the element you will need to use the comparator
+        or change from Min to max heap
+         */
+
+        PriorityQueue<Integer> pMax = new PriorityQueue<Integer>(Comparator.reverseOrder());
+        pMax.add(4);
+        pMax.add(2);
+        pMax.add(5);
+        pMax.add(3);
+
+        System.out.println(" elements of the Max heap are " + pMax);
+
+
+
+
+
     }
 }
