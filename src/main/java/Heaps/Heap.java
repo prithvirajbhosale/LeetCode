@@ -162,6 +162,12 @@ public class Heap {
 
         int[] arr = new int[]{-1,54,53,52,50};
         int n = 4;
+
+        /*
+        leaf nodes are the index (n/2+1) till nth, hence we dont need to process them
+        as they are alreay heap,
+        so we will start
+         */
         for (int i = n/2; i>0;i--){
             heapify(arr,n,i);
         }
