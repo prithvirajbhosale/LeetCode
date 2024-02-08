@@ -6,6 +6,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../QuickStart/pom.xml" />
+        <option value="/Volumes/Prithvi/develop/grpcDemo/pom.xml" />
+        <option value="/Volumes/Prithvi/develop/GrpcClient/pom.xml" />
       </list>
     </option>
   </component>
