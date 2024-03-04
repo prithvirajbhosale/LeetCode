@@ -2,4 +2,6 @@
 /shelf/
 /workspace.xml
 *.class
+.*xml
+.*idea
 
